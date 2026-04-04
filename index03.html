@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        - Частотный словарь слов
+    
+        
+        
+        
+        **Условие:** Напиши `wordFreq(words)`, которая вернёт объект частот: `{ слово: количество }`. Регистр учитывается.
+
+
+    </p>
+    <pre>
+// Вход:
+const words = ['кот', 'пёс', 'кот', 'кот', 'пёс'];
+
+// Вызов:
+const result = wordFreq(words);
+
+// Ожидаемый результат:
+const expected = { 'кот': 3, 'пёс': 2 };
+        
+    </pre>
+    <div class="answer"></div>
+    <script>
+        // Вход:
+const words = ['кот', 'пёс', 'кот', 'кот', 'пёс'];
+
+function wordFreq(arr) {
+    let obj = {};
+    for(let i of arr) {
+        if (i in obj) obj[i] += 1;
+        else obj[i] = 1;
+    }
+    return obj;
+}
+// Вызов:
+const result = wordFreq(words);
+console.log(result)
+document.querySelector('.answer').innerHTML = 'Ответ - '
+for(let j in result) {
+    document.querySelector('.answer').innerHTML += `${j}: ${result[j]} `
+}
+// Ожидаемый результат:
+// const expected = { 'кот': 3, 'пёс': 2 };
+        
+    </script>
+</body>
+</html>
