@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Реверс без встроенного `reverse`
+    
+ 
+ 
+        
+        **Условие:** Напиши `manualReverse(arr)`, которая вернёт **новый** массив в обратном порядке, используя циклы/итерации
+        
+        
+
+    </p>
+    <pre>
+    // Вход:
+    const arr = [1, 2, 3, 4];
+    
+    // Вызов:
+    const result = manualReverse(arr);
+    
+    // Ожидаемый результат:
+    const expected = [4, 3, 2, 1];
+        
+    </pre>
+    <div class="answer"></div>
+    <script>
+        // Вход:
+const arr = [1, 2, 3, 4];
+
+function manualReverse(userArr){
+    let innerArr = [];
+    for(let i = 0; i < userArr.length; i++){
+        innerArr.unshift(userArr[i])
+    }
+    return innerArr;
+}
+// Вызов:
+const result = manualReverse(arr);
+console.log(result)
+document.querySelector('.answer').innerHTML = `Ответ: ${result}`
+// Ожидаемый результат:
+// const expected = [4, 3, 2, 1];
+    </script>
+</body>
+</html>

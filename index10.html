@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Плоский массив из массива объектов с массивами
+    
+     
+        
+        **Условие:** Напиши `compactObject(obj)`, которая вернёт **новый** объект без свойств со значениями `null`, `undefined`, `''` (пустая строка). Другие «ложные» значения (0, false) — оставлять.
+        
+        
+    </p>
+    <pre>
+        // Вход:
+const obj = { a: 0, b: '', c: null, d: 'ok', e: undefined, f: false };
+
+// Вызов:
+const result = compactObject(obj);
+
+// Ожидаемый результат:
+const expected = { a: 0, d: 'ok', f: false };
+    </pre>
+    <div class="answer">результат в консоли</div>
+    <script>
+       // Вход:
+const obj = { a: 0, b: '', c: null, d: 'ok', e: undefined, f: false };
+
+function compactObject(userObject){
+    let returnObject = {};
+    for (let key in userObject){
+        console.log(userObject[key]);
+        if(userObject[key] !== undefined &&
+           userObject[key] !== null &&
+           userObject[key] !== ''
+        ) {
+            returnObject[key] = userObject[key];
+        }
+    }
+    return returnObject;
+}
+
+// Вызов:
+const result = compactObject(obj);
+console.log(result)
+// Ожидаемый результат:
+// const expected = { a: 0, d: 'ok', f: false };
+    </script>
+</body>
+</html>
