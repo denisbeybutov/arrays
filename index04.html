@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        - Фильтр по диапазону
+    
+    
+        
+        **Условие:** Напиши `filterRange(nums, min, max)`, которая вернёт новый массив чисел из диапазона `[min, max]` включительно.
+        
+        
+
+
+    </p>
+    <pre>
+    // Вход:
+    const nums = [5, 1, 9, 3, 7];
+    const min = 3;
+    const max = 7;
+    
+    // Вызов:
+    const result = filterRange(nums, min, max);
+    
+    // Ожидаемый результат:
+    const expected = [5, 3, 7];
+        
+    </pre>
+    <div class="answer"></div>
+    <script>
+        // Вход:
+const nums = [5, 1, 9, 3, 7];
+const min = 3;
+const max = 7;
+
+function filterRange(arr, minNum, maxNum) {
+    let outArr = [];
+    for(let i of arr) {
+        console.log(i);
+        if(i >= minNum && i <= maxNum) outArr.push(i)
+    }
+    return outArr;
+}
+// Вызов:
+const result = filterRange(nums, min, max);
+console.log(result)
+document.querySelector('.answer').innerHTML = `Ответ: ${result}`
+// Ожидаемый результат:
+// const expected = [5, 3, 7];
+    </script>
+</body>
+</html>
