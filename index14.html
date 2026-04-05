@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Удаление всех вхождений элемента
+    
+        
+        🏗️
+        
+        **Условие:** Напиши `removeAll(arr, value)`, которая вернёт новый массив без всех элементов, равных `value`
+        
+        
+    </p>
+    <pre>
+        // Вход:
+const arr = [1, 2, 3, 2, 4, 2];
+const value = 2;
+
+// Вызов:
+const result = removeAll(arr, value);
+
+// Ожидаемый результат:
+const expected = [1, 3, 4];
+    </pre>
+    <div class="answer">результат в консоли</div>
+    <script>
+    // Вход:
+const arr = [1, 2, 3, 2, 4, 2];
+const value = 2;
+function removeAll(userArr, userValue){
+    let returnArr = [];
+    for(let i of userArr){
+        if(i != userValue) returnArr.push(i);
+    }
+    return returnArr;
+}
+// Вызов:
+const result = removeAll(arr, value);
+console.log(result)
+// Ожидаемый результат:
+// const expected = [1, 3, 4];
+    </script>
+</body>
+</html>

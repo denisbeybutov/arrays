@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Пересечение массивов
+    
+        <aside>
+        🏗️
+        
+        **Условие:** Напиши `intersection(arr1, arr2)`, которая вернёт массив элементов, встречающихся в обоих массивах, без дублей.
+        
+        </aside>
+    </p>
+    <pre>
+        // Вход:
+        const arr1 = [1, 2, 3, 4];
+        const arr2 = [3, 4, 4, 5, 6];
+        
+        // Вызов:
+        const result = intersection(arr1, arr2);
+        
+        // Ожидаемый результат:
+        const expected = [3, 4];
+    </pre>
+    <div class="answer">результат в консоли</div>
+    <script>
+       // Вход:
+const arr1 = [1, 2, 3, 4];
+const arr2 = [3, 4, 4, 5, 6];
+
+function intersection(userArr1, userArr2) {
+    let returnArr = [];
+    for(let i of userArr1){
+        for(let j of userArr2){
+            // console.log(returnArr)
+            if (i == j && !returnArr.includes(i)) returnArr.push(i)
+        }
+    }
+    return returnArr;
+}
+// Вызов:
+const result = intersection(arr1, arr2);
+console.log(result)
+document.querySelector('.answer').innerHTML = `Ответ ${result}`
+// Ожидаемый результат:
+// const expected = [3, 4];
+    </script>
+</body>
+</html>
