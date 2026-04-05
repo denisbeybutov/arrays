@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Proto 05</p>
+    <p>Что выведет консоль
+    </p>
+    <script>
+        // function Animal(name) {
+        //     this.name = name;
+        // }
+        // Animal.prototype.sayHello = function() {
+        //     console.log(`Hello, I'm ${this.name}`);
+        // };
+        // const cat = new Animal("Whiskers");
+        // cat.sayHello(); // Hello I'm Whiskers
+
+        // -------------
+
+        // function Car() {}
+        // const toyota = new Car();
+        
+        // Car.prototype.wheels = 4;
+        // console.log(toyota.wheels);// 4
+
+        //-------------
+        // function Phone() {}
+        // Phone.prototype.os = "Android";
+
+        // const pixel = new Phone();
+        // pixel.os = "ChromeOS";
+
+        // console.log(pixel.os);// сromeos
+
+        //---------------
+
+        // function A() {}
+        // A.prototype.value = 10;
+
+        // function B() {}
+        // B.prototype = Object.create(A.prototype);
+
+        // const b = new B();
+        // console.log(b.value); // 10
+
+        //--------------
+
+        // function Robot() {}
+        // Robot.prototype.speak = function() {
+        //     console.log("Beep boop");
+        // };
+
+        // const robby = new Robot();
+        // robby.speak = function() {
+        //     console.log("Hello, human!");
+        // };
+
+        // robby.speak(); // hello human
+
+        //-------------
+
+        // const obj = {
+        //     a: 42,
+        //     say() {
+        //         setTimeout( () => {
+        //             console.log(this.a);
+        //         }, 1000);
+        //     }
+        // }
+
+        // obj.say();
+
+        //-------------
+
+        // function CreateObj() {
+        //     this.a = 42;
+        //     this.say = () => {
+        //         setTimeout(() => {
+        //         console.log(this.a); // 42
+        //         }, 1000);
+        //     };
+        //     }
+
+        //     const obj = new CreateObj();
+        //     obj.say(); // Через 1 с: 42
+        //     console.log(obj.a)
+
+        //------------
+
+        // const shape = {
+        //     radius: 10,
+        //     diameter() {
+        //         return this.radius * 2;
+        //     },
+        //     perimeter: function() { return 2 * Math.PI * this.radius}
+        // };
+
+        // console.log(shape.diameter());
+        // console.log(shape.perimeter());
+
+        //----------------
+
+        // const obj = {
+        //     name: 'Zara',
+        //     getFunc() {
+        //         return function() {
+        //         console.log(this.name);
+        //         };
+        //     }
+        //     };
+
+        //     const func = obj.getFunc();
+        //     func.call(obj);
+
+        //-------------
+
+        // const obj = {
+        //     name: 'Sam',
+        //     getName() {
+        //         console.log(this.name);
+        //     }
+        //     };
+
+        //     (0, obj.getName)();
+            
+        //----------
+
+//         function outer() {
+//   console.log(this); // A
+
+//   return function inner() {
+//     console.log(this); // B
+//   };
+// }
+
+// const boundOuter = outer.bind({ x: 1 });
+// const result = boundOuter();
+// result.call({ y: 2 });
+
+//-----------
+// // "use strict"
+// const obj = {
+//   count: 0,
+//   inc() {
+//     return  () => {
+//       this.count++;
+//       console.log(this.count);
+      
+//     };
+//   }
+// };
+
+// const fn = obj.inc();
+// fn();
+
+//--------
+
+//var f = function() {
+//    this.x = 5;
+//    (function() {
+//        this.x = 3;
+//     })();
+//     console.log(this.x);
+// };
+
+// new f();
+
+//------
+
+// let length = 10;
+
+// function callback() {
+//   console.log(this.length);
+// }
+
+// const obj = {
+//   length: 20,
+//   method: function () {
+//     arguments[0]();
+//   }
+// };
+
+// obj.method(callback, 2, 3,4,5,6,7);
+
+//------
+
+// "use strict";
+
+// const obj = {
+//   a: 10,
+//   b()  {
+//     console.log(this.a);
+//   }
+// };
+
+// obj.b();
+
+//---------
+
+let obj = {
+  x: 1,
+  getX: function () {
+    return this.x;
+  }
+};
+
+let retrieveX = obj.getX;
+obj = null;
+retrieveX.x = 3;
+console.log(retrieveX.call(retrieveX));
+
+
+            
+    </script>
+</body>
+</html>

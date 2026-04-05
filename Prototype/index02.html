@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Proto 02
+    <script>
+        // Создаем прототип
+        const animal = {
+            eats: true
+        };
+
+        // Создаем объект с этим прототипом
+        const rabbit = Object.create(animal);
+        rabbit.jumps = true;
+
+        function checkPropertyInPrototype (prop, obj) {
+            return {
+                ownProperty: obj.hasOwnProperty(prop),
+                inPrototypeChain: prop in obj
+            }            
+        }
+
+
+        console.log(checkPropertyInPrototype('jumps', rabbit));
+        // { ownProperty: true, inPrototypeChain: true }
+
+        console.log(checkPropertyInPrototype('eats', rabbit));
+        // { ownProperty: false, inPrototypeChain: true }
+
+        console.log(checkPropertyInPrototype('nonexistent', rabbit));
+        // { ownProperty: false, inPrototypeChain: false }
+    </script>
+</body>
+</html>
