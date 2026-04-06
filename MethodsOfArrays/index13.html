@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Отбор лучших фильмов
+    
+        <aside>
+        🏗️
+        
+        **Условие:** дан массив фильмов `{ title, rating, year }`. Нужно:
+        
+        1. оставить фильмы с рейтингом от 8;
+        2. отсортировать их по году (по убыванию);
+        3. вернуть массив названий.
+        </aside>
+    </p>
+    <pre>
+        // Вход:
+        const movies = [
+          { title: 'Фильм A', rating: 7.5, year: 2020 },
+          { title: 'Фильм B', rating: 8.3, year: 2022 },
+          { title: 'Фильм C', rating: 8.1, year: 2019 }
+        ];
+        
+        // Выход:
+        const result = ['Фильм B', 'Фильм C'];
+    </pre>
+    <p class="answer"></p>
+    <script>
+    // Вход:
+const movies = [
+  { title: 'Фильм A', rating: 7.5, year: 2020 },
+  { title: 'Фильм B', rating: 8.3, year: 2022 },
+  { title: 'Фильм C', rating: 8.1, year: 2019 }
+];
+let returnArr = movies.filter(movie => movie.rating > 8);
+// console.log(returnArr);
+returnArr.sort((a,b) => b.year - a.year )
+console.log(returnArr)
+let res =[];
+for(let i of returnArr){
+    res.push(i.title);
+}
+console.log(res)
+
+
+// Выход:
+const result = ['Фильм B', 'Фильм C'];
+    </script>
+</body>
+</html>

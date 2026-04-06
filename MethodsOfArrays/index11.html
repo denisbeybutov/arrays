@@ -38,6 +38,22 @@ const students = [
   { name: 'Оля', grades: [4, 4, 4] }
 ];
 
+function getGoodStudents(userArrOfStudents){
+    let returnArr = [];
+    for(let student of userArrOfStudents){
+        
+        let sum = 0;
+        for(let mark of student.grades){
+            sum += mark;
+        }
+        
+        let middleMark = sum/student.grades.length;
+        if (middleMark >= 4) returnArr.push(student.name)
+    }
+    return returnArr
+}
+
+console.log(getGoodStudents(students))
 // Выход:
 const result = ['Аня', 'Оля'];
     </script>
