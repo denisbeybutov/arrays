@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Список email админов
+    
+        <aside>
+        🏗️
+        
+        **Условие:** дан массив пользователей `{ name, email, role }`. Нужно:
+        
+        1. оставить только администраторов (`role: 'admin'`);
+        2. вернуть массив email.
+        </aside>
+    </p>
+    <pre>
+        // Вход:
+        const users = [
+          { name: 'Анна', email: 'anna@mail.com', role: 'user' },
+          { name: 'Иван', email: 'ivan@mail.com', role: 'admin' },
+          { name: 'Оля', email: 'olya@mail.com', role: 'admin' }
+        ];
+        
+        // Выход:
+        const result = ['ivan@mail.com', 'olya@mail.com'];
+    </pre>
+    <p class="answer"></p>
+    <script>
+    // Вход:
+const users = [
+  { name: 'Анна', email: 'anna@mail.com', role: 'user' },
+  { name: 'Иван', email: 'ivan@mail.com', role: 'admin' },
+  { name: 'Оля', email: 'olya@mail.com', role: 'admin' }
+];
+let resultArr = [];
+let adminArr = users.filter(user => user.role == 'admin')
+adminArr.forEach(admin => resultArr.push(admin.email))
+console.log(resultArr)
+
+
+// Выход:
+const result = ['ivan@mail.com', 'olya@mail.com'];
+    </script>
+</body>
+</html>

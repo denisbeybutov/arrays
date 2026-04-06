@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Создать объект индексов элементов
+    
+       
+        
+        **Условие:** Напиши `indexPositions(arr)`, которая вернёт объект, где ключ — элемент массива, а значение — массив индексов, на которых он встречается.
+        
+        
+        
+    </p>
+    <pre>
+        // Вход:
+        const arr = ['a', 'b', 'a', 'c', 'b', 'a'];
+        
+        // Вызов:
+        const result = indexPositions(arr);
+        
+        // Ожидаемый результат:
+        const expected = { a: [0, 2, 5], b: [1, 4], c: [3] };
+    </pre>
+    <div class="answer">результат в консоли</div>
+    <script>
+    // Вход:
+const arr = ['a', 'b', 'a', 'c', 'b', 'a'];
+function indexPositions(userArr){
+    let innerObj = {};
+    for(let i = 0; i < userArr.length; i++) {
+        
+        if(userArr[i] in innerObj) {
+            innerObj[userArr[i]].push(i);
+        }
+        else {
+            innerObj[userArr[i]] = [];
+            innerObj[userArr[i]].push(i);
+        }
+
+    }
+    return innerObj;
+}
+// Вызов:
+const result = indexPositions(arr);
+console.log(result)
+// Ожидаемый результат:
+const expected = { a: [0, 2, 5], b: [1, 4], c: [3] };
+    </script>
+</body>
+</html>

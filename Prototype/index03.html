@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Proto 03</p>
+    <pre>Создайте простую цепочку прототипов для животных. Реализуйте:
+
+1. Базовый прототип **`animal`**
+2. Прототип **`rabbit`**, наследующий от **`animal`**
+3. Прототип **`longEar`**, наследующий от **`rabbit`**
+
+Требования:
+
+- Каждый прототип должен добавлять новое свойство
+- Проверьте доступность свойств по цепочке
+    </pre>
+    <script>
+        const animal = {
+            eat: true,
+        }
+        const rabbit = Object.create(animal);
+        rabbit.jumps = true;
+        const longEar = Object.create(rabbit);
+        longEar.earLength = 20;
+
+        console.log('Длинноухий кролик ест?',longEar.eat)
+        console.log('Длинноухий кролик прыгает?',longEar.jumps)
+        console.log('Длина ушейу длиноухого кролика',longEar.earLength)
+
+        console.log('Кролик прыгает?',rabbit.jumps)
+        console.log('Кролик ест?',rabbit.eat)
+
+
+
+
+    </script>
+</body>
+</html>

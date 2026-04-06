@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Отбор совершеннолетних
+    
+        
+        **Условие:** дан массив объектов с именем и возрастом. Нужно оставить только тех, кому 18 лет и больше.
+        
+        
+    </p>
+    <pre>
+        // Вход:
+        const people = [
+          { name: 'Анна', age: 17 },
+          { name: 'Иван', age: 18 },
+          { name: 'Оля', age: 22 }
+        ];
+        
+        // Выход:
+        const result = [
+          { name: 'Иван', age: 18 },
+          { name: 'Оля', age: 22 }
+        ];
+    </pre>
+    <p class="answer"></p>
+    <script>
+      // Вход:
+const people = [
+  { name: 'Анна', age: 17 },
+  { name: 'Иван', age: 18 },
+  { name: 'Оля', age: 22 }
+];
+
+function showAdult(arrOfPeople){
+    return arrOfPeople.filter(people => people.age >= 18);
+}
+
+const result = showAdult(people);
+console.log(result);
+// Выход:
+// const result = [
+//   { name: 'Иван', age: 18 },
+//   { name: 'Оля', age: 22 }
+// ];
+    </script>
+</body>
+</html>

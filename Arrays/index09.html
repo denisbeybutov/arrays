@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Проверка палиндрома для массива символов
+    
+      
+        
+        **Условие:** Напиши `isPalindrome(chars)`, которая проверит, является ли массив символов палиндромом (одинаково читается слева направо и справа налево).
+        
+        
+        
+    </p>
+    <pre>
+        // Вход:
+        const chars = ['т', 'о', 'п', 'о', 'т'];
+        
+        // Вызов:
+        const result = isPalindrome(chars);
+        
+        // Ожидаемый результат:
+        const expected = true;
+    </pre>
+    <div class="answer"></div>
+    <script>
+       // Вход:
+const chars = ['т', 'о', 'п', 'о', 'т'];
+
+function isPalindrome(arr){
+    let flag = true;
+    // console.log(Math.floor(arr.length/2))
+    for(let i = 0; i < Math.floor(arr.length/2); i++){
+        console.log(arr[i])
+        console.log(arr[arr.length - 1 - i])
+        if(arr[i] != arr[arr.length - 1 - i ]) flag = false
+    }
+    return flag;
+}
+// Вызов:
+const result = isPalindrome(chars);
+console.log(result)
+// Ожидаемый результат:
+// const expected = true;
+    </script>
+</body>
+</html>

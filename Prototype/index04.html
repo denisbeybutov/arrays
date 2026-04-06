@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Proto 04</p>
+    <p>Напишите функцию cloneWithPrototype(obj), которая создаёт копию объекта, сохраняя его прототип.
+    </p>
+    <script>
+        const animal = {
+            eats: true,
+        }
+        
+        animal.speak = function(){
+            console.log('ам')
+        }
+
+        function cloneWithPrototype(obj) {
+            let clone = Object.create(Object.getPrototypeOf(obj));
+            Object.assign(clone, obj)
+            return clone;
+        }
+
+        console.log(animal)
+        console.log(cloneWithPrototype(animal))
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Группировка по полю
+  
+        
+        **Условие:** Напиши `groupBy(items, key)`, которая вернёт объект `{ [keyValue]: item[] }`.
+        
+        
+    </p>
+    <pre>
+        // Вход:
+        const items = [
+          { city: 'Moscow', name: 'Иван' },
+          { city: 'SPb',    name: 'Оля' },
+          { city: 'Moscow', name: 'Анна' }
+        ];
+        const key = 'city';
+        
+        // Вызов:
+        const result = groupBy(items, key);
+        
+        // Ожидаемый результат:
+        const expected = {
+          Moscow: [{ city: 'Moscow', name: 'Иван' }, { city: 'Moscow', name: 'Анна' }],
+          SPb:    [{ city: 'SPb',    name: 'Оля' }]
+        };
+    </pre>
+    <div class="answer">ответ в консоли</div>
+    <script>
+       // Вход:
+const items = [
+  { city: 'Moscow', name: 'Иван' },
+  { city: 'SPb',    name: 'Оля' },
+  { city: 'Moscow', name: 'Анна' }
+];
+const key = 'city';
+
+function groupBy(arrOfObjects, groupKey) {
+    let returnObject = {};
+    for(let obj of arrOfObjects){
+        
+        if(obj[groupKey] in returnObject) {
+            returnObject[obj[groupKey]].push(obj);
+            
+        }
+        else {
+            returnObject[obj[groupKey]] = [];
+            returnObject[obj[groupKey]].push(obj);
+            
+        };
+    }
+    return returnObject;
+}
+// Вызов:
+const result = groupBy(items, key);
+console.log('ответ',result);
+// Ожидаемый результат:
+// const expected = {
+//   Moscow: [{ city: 'Moscow', name: 'Иван' }, { city: 'Moscow', name: 'Анна' }],
+//   SPb:    [{ city: 'SPb',    name: 'Оля' }]
+// };
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Cумма значений по совпадению ключей двух объектов
+    
+        <aside>
+        🏗️
+        
+        **Условие:** Напиши `sumMatchingKeys(obj1, obj2)`, которая сложит значения по совпадающим ключам, остальные ключи просто перенесёт.
+        
+        </aside>
+    </p>
+    <pre>
+        // Вход:
+        const obj1 = { a: 2, b: 3, c: 4 };
+        const obj2 = { b: 5, c: 1, d: 7 };
+        
+        // Вызов:
+        const result = sumMatchingKeys(obj1, obj2);
+        
+        // Ожидаемый результат:
+        const expected = { a: 2, b: 8, c: 5, d: 7 };
+    </pre>
+    <div class="answer">результат в консоли</div>
+    <script>
+      // Вход:
+const obj1 = { a: 2, b: 3, c: 4 };
+const obj2 = { b: 5, c: 1, d: 7 };
+
+function sumMatchingKeys(userObj1,userObj2) {
+    let innerObj = {};
+    for(let key in userObj1) {
+        console.log(key)
+        if(key in innerObj) {
+            innerObj[key] += userObj1[key];
+        }
+        else {
+            innerObj[key] = userObj1[key];
+        }
+    }
+    for(let key in userObj2) {
+        console.log(key)
+        if(key in innerObj) {
+            innerObj[key] += userObj2[key];
+        }
+        else {
+            innerObj[key] = userObj2[key];
+        }
+    
+    }
+    return innerObj;
+}
+// Вызов:
+const result = sumMatchingKeys(obj1, obj2);
+console.log(result)
+// Ожидаемый результат:
+// const expected = { a: 2, b: 8, c: 5, d: 7 };
+    </script>
+</body>
+</html>

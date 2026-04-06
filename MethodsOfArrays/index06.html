@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Преобразование массива дат в формат `дд.мм.гггг`
+    
+      <aside>
+      🏗️
+      
+      **Условие:** дан массив объектов типа `Date`. Нужно вернуть массив строк в формате `дд.мм.гггг`.
+      
+      </aside>
+      
+    </p>
+    <pre>
+      // Вход:
+const dates = [
+  new Date('2025-03-15'),
+  new Date('2025-12-01')
+];
+
+// Выход:
+const result = ['15.03.2025', '01.12.2025'];
+    </pre>
+    <p class="answer"></p>
+    <script>
+      // Вход:
+const dates = [
+  new Date('2025-03-15'),
+  new Date('2025-12-01')
+];
+console.log(dates[0].getDate(), String(dates[0].getMonth()+1).padStart(2, '0'),dates[0].getFullYear())
+
+function getArrayOfStrings(userArr){
+  let returnArr = [];
+  for(let date of userArr) {
+    let stringDate = `${String(date.getDate()).padStart(2, '0')}.${String(date.getMonth()+1).padStart(2, '0')}.${date.getFullYear()}`;
+    returnArr.push(stringDate);
+  }
+  return returnArr;
+}
+
+console.log(getArrayOfStrings(dates));
+// Выход:
+const result = ['15.03.2025', '01.12.2025'];
+    </script>
+</body>
+</html>

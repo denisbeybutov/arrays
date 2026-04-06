@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+      - Сведение транзакций в баланс по типам
+    
+    <aside>
+    🏗️
+    
+    **Условие:** Напиши `balanceByType(tx, typeKey, amountKey)`, которая вернёт `{ income: sum, expense: sum, total: income - expense }`. Типы могут быть любыми строками, но сумму total считать как `income - expense` (если они есть).
+    
+    </aside>
+    </p>
+    <pre>
+      // Вход:
+const tx = [
+  { type: 'income', amount: 1000 },
+  { type: 'expense', amount: 300 },
+  { type: 'expense', amount: 200 },
+  { type: 'income', amount: 500 }
+];
+const typeKey = 'type';
+const amountKey = 'amount';
+
+// Вызов:
+const result = balanceByType(tx, typeKey, amountKey);
+
+// Ожидаемый результат:
+const expected = { income: 1500, expense: 500, total: 1000 };
+    </pre>
+    <p class="answer"></p>
+    <script>
+   // Вход:
+const tx = [
+  { type: 'income', amount: 1000 },
+  { type: 'expense', amount: 300 },
+  { type: 'expense', amount: 200 },
+  { type: 'income', amount: 500 },
+  
+];
+const typeKey = 'type';
+const amountKey = 'amount';
+
+function balanceByType(userTX, userTypeKey, userAmountKey){
+  let obj = {
+    income: 0,
+    expense: 0,
+    total: 0
+  };
+  for(let transaction of userTX) {
+    console.log(transaction)
+    if(transaction[userTypeKey] == 'income') obj.income += transaction.amount
+    if(transaction[userTypeKey] == 'expense') obj.expense += transaction.amount
+  }
+  obj.total = obj.income - obj.expense;
+  return obj;
+}
+// Вызов:
+const result = balanceByType(tx, typeKey, amountKey);
+console.log(result)
+// Ожидаемый результат:
+const expected = { income: 1500, expense: 500, total: 1000 };
+    </script>
+</body>
+</html>

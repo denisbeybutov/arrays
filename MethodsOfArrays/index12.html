@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Топ популярных тегов
+    
+        <aside>
+        🏗️
+        
+        **Условие:** дан массив постов `{ title, tags }`, где `tags` — массив тегов. Нужно:
+        
+        1. собрать все теги в один массив;
+        2. посчитать, сколько раз встречается каждый тег;
+        3. вернуть объект с количеством.
+        </aside>
+    </p>
+    <pre>
+        // Вход:
+const posts = [
+  { title: 'JS Basics', tags: ['js', 'frontend'] },
+  { title: 'React Hooks', tags: ['react', 'js'] },
+  { title: 'CSS Grid', tags: ['css', 'frontend'] }
+];
+
+// Выход:
+const result = { js: 2, frontend: 2, react: 1, css: 1 };
+    </pre>
+    <p class="answer"></p>
+    <script>
+     // Вход:
+const posts = [
+  { title: 'JS Basics', tags: ['js', 'frontend'] },
+  { title: 'React Hooks', tags: ['react', 'js'] },
+  { title: 'CSS Grid', tags: ['css', 'frontend'] }
+];
+
+let newArr = [];
+for(let post of posts){
+    newArr = newArr.concat(post.tags)
+}
+console.log(newArr)
+let obj = {};
+for(let tag of newArr){
+    console.log(tag)
+    if(tag in obj) {
+        obj[tag] += 1
+    }
+    else {
+        obj[tag] = 1
+    }
+}
+console.log(obj)
+
+// Выход:
+const result = { js: 2, frontend: 2, react: 1, css: 1 };
+    </script>
+</body>
+</html>

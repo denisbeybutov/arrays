@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Преобразование вложенных массивов в строки
+    
+      <aside>
+      🏗️
+      
+      **Условие:** дан массив массивов с числами внутри. Нужно вернуть массив склеенных чисел. Склеивать символом `,`
+      
+      </aside>
+    </p>
+    <pre>
+      // Вход:
+const arrays = [
+  [1, 2],
+  [3, 4, 5],
+  [7]
+];
+
+// Выход:
+const result = ['1,2', '3,4,5', '7'];
+    </pre>
+    <p class="answer"></p>
+    <script>
+      // Вход:
+const arrays = [
+  [1, 2],
+  [3, 4, 5],
+  [7]
+];
+let res = []
+for(let i of arrays){
+  console.log(i.join(','))
+  res.push(i.join(','))
+}
+console.log(res)
+// Выход:
+const result = ['1,2', '3,4,5', '7'];
+    </script>
+</body>
+</html>

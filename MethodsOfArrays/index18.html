@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Маршруты с суммой дистанций
+    
+      <aside>
+      🏗️
+      
+      **Условие:** Напиши функцию `routeTotals(routes, minSegments)`, которая оставляет маршруты с количеством сегментов `>= minSegments` и возвращает `{ id, total }`, где `total` — сумма `distance`.
+      
+      </aside>
+    </p>
+    <pre>
+      // Вход:
+const routes = [
+  { id: 'r1', segments: [{ distance: 10 }, { distance: 15 }] },
+  { id: 'r2', segments: [{ distance: 5 }] },
+  { id: 'r3', segments: [{ distance: 7 }, { distance: 8 }, { distance: 10 }] }
+];
+const minSegments = 2;
+
+// Вызов:
+const result = routeTotals(routes, minSegments);
+
+// Ожидаемый результат:
+const expected = [
+  { id: 'r1', total: 25 },
+  { id: 'r3', total: 25 }
+];
+    </pre>
+    <p class="answer"></p>
+    <script>
+   // Вход:
+const routes = [
+  { id: 'r1', segments: [{ distance: 10 }, { distance: 15 }] },
+  { id: 'r2', segments: [{ distance: 5 }] },
+  { id: 'r3', segments: [{ distance: 7 }, { distance: 8 }, { distance: 10 }] }
+];
+const minSegments = 2;
+
+// function routeTotals(arrOfRoutes, userMinSeg) {
+//   let innerArr = [];
+//   arrOfRoutes.reduce((acc,route) => {
+    
+//     if(route.segments.length >= 2) {
+//       console.log(route.id)
+//       acc['id'] = route.id
+//       console.log(acc)
+//       innerArr.push(acc)
+      
+//     }
+
+//     // console.log(acc);
+//     // console.log(innerArr);
+//     return acc;
+//   },{})
+// }
+
+function routeTotals(arrOfRoutes, userMinSeg) {
+  return arrOfRoutes
+    .filter(route => route.segments.length >= userMinSeg) // Отбираем маршруты с нужным числом сегментов
+    .map(route => ({
+      id: route.id,
+      total: route.segments.reduce((sum, segment) => sum + segment.distance, 0) // Суммируем расстояния
+    }));
+}
+
+// Вызов:
+const result = routeTotals(routes, minSegments);
+console.log(result)
+// Ожидаемый результат:
+const expected = [
+  { id: 'r1', total: 25 },
+  { id: 'r3', total: 25 }
+];
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        - Глубокая сумма по ключу у массива объектов
+    
+      
+        
+        **Условие:** Напиши `sumByKey(items, key)`, которая просуммирует числовые значения по `key`. Отсутствующие/нечисловые — игнорировать.
+ 
+        
+
+
+    </p>
+    <pre>
+    // Вход:
+    const items = [
+      { price: 100 },
+      { cost: 50 },
+      { price: 70 },
+      { price: 'NaN' }
+    ];
+    const key = 'price';
+
+    // Вызов:
+    const result = sumByKey(items, key);
+
+    // Ожидаемый результат:
+    const expected = 170;
+        
+    </pre>
+    <div class="answer"></div>
+    <script>
+        // Вход:
+    const items = [
+      { price: 100 },
+      { cost: 50 },
+      { price: 70 },
+      { price: 'NaN'}
+    ];
+    const key = 'price';
+
+    function sumByKey(arrOfObjects, keyOfObject){
+        let sum = 0;
+        for(let i of arrOfObjects) {
+            
+            if(Number.isFinite(i.price)) sum += i.price;
+
+        }
+        return sum;
+    }
+    // Вызов:
+    const result = sumByKey(items, key);
+    console.log(result)
+    document.querySelector('.answer').innerHTML = `Ответ: ${result}`
+    // Ожидаемый результат:
+    // const expected = 170;
+    </script>
+</body>
+</html>

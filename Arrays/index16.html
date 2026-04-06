@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Поменять ключи и значения местами
+    
+    
+        
+        **Условие:** Напиши `invertObject(obj)`, которая вернёт новый объект, где ключи и значения поменяны местами (значения уникальны и строки/числа).
+        
+        
+        
+        
+    </p>
+    <pre>
+        // Вход:
+        const obj = { a: 'x', b: 'y', c: 'z' };
+        
+        // Вызов:
+        const result = invertObject(obj);
+        
+        // Ожидаемый результат:
+        const expected = { x: 'a', y: 'b', z: 'c' };
+    </pre>
+    <div class="answer">результат в консоли</div>
+    <script>
+    // Вход:
+const obj = { a: 'x', b: 'y', c: 'z' };
+
+function invertObject(userObj){
+    let innerObj = {};
+    for(let key in userObj){
+
+        innerObj[userObj[key]] = key;
+    }
+    return innerObj;
+}
+// Вызов:
+const result = invertObject(obj);
+console.log(result)
+// Ожидаемый результат:
+const expected = { x: 'a', y: 'b', z: 'c' };
+    </script>
+</body>
+</html>

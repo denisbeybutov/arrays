@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- - Поиск объекта по нескольким критериям
+    
+
+        
+        **Условие:** Напиши `findByCriteria(items, criteria)`, где `criteria` — объект вида `{ key: value }`. Верни **первый** объект, который удовлетворяет всем парам ключ-значение (строгое равенство). Если не найден — `null`.
+        
+        
+    </p>
+    <pre>
+    // Вход:
+    const items = [
+      { name: 'A', type: 'tool', active: true },
+      { name: 'B', type: 'tool', active: false },
+      { name: 'C', type: 'part', active: true }
+    ];
+    const criteria = { type: 'tool', active: true };
+    
+    // Вызов:
+    const result = findByCriteria(items, criteria);
+    
+    // Ожидаемый результат:
+    const expected = { name: 'A', type: 'tool', active: true };
+        
+    </pre>
+    <div class="answer"></div>
+    <script>
+       // Вход:
+const items = [
+  { name: 'A', type: 'tool', active: true },
+  { name: 'B', type: 'tool', active: false },
+  { name: 'C', type: 'part', active: true }
+];
+const criteria = { type: 'tool', active: true };
+
+function findByCriteria(arrOfObjects, objectOfCriterias){
+    let returnObject = {};
+    let flag;
+    for(let obj of arrOfObjects){
+        
+        flag = 0;
+        for(let i in objectOfCriterias) {
+        
+            
+            if(obj[i] == objectOfCriterias[i]) {
+                flag += 1;
+            }
+            
+        }
+        
+        
+        if(flag == Object.keys(objectOfCriterias).length) returnObject = obj
+
+    }
+    return returnObject;
+}
+// Вызов:
+const result = findByCriteria(items, criteria);
+console.log(result)
+document.querySelector('.answer').innerHTML = 'Ответ <br>'
+for(let j in result) {
+    document.querySelector('.answer').innerHTML += `${j} ${result[j]} <br>`
+}
+
+// Ожидаемый результат:
+// const expected = { name: 'A', type: 'tool', active: true };
+    </script>
+</body>
+</html>

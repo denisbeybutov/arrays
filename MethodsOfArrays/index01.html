@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        - Функция `analyzeBookSales(booksArray)`  - сумма всех проданных книг
+    
+   
+    
+    Напиши функцию `analyzeBookSales(booksArray)` для расчета следующего показателя:
+    
+    - **Общая выручка** за день.
+    
+    </p>
+    <pre>
+        Входные данные
+
+```jsx
+const books = [
+  { title: "1984", category: "dystopia", price: 350 },
+  { title: "Brave New World", category: "dystopia", price: 400 },
+  { title: "The Great Gatsby", category: "classic", price: 300 },
+  { title: "Dune", category: "sci-fi", price: 450 },
+  { title: "Fahrenheit 451", category: "dystopia", price: 380 },
+  { title: "To Kill a Mockingbird", category: "classic", price: 320 },
+  { title: "Foundation", category: "sci-fi", price: 420 },
+];
+```
+
+Выходные данные
+
+```jsx
+Число с суммой стомости всех проданных книг
+```
+    </pre>
+    <p class="answer"></p>
+    <script>
+        const books = [
+  { title: "1984", category: "dystopia", price: 350 },
+  { title: "Brave New World", category: "dystopia", price: 400 },
+  { title: "The Great Gatsby", category: "classic", price: 300 },
+  { title: "Dune", category: "sci-fi", price: 450 },
+  { title: "Fahrenheit 451", category: "dystopia", price: 380 },
+  { title: "To Kill a Mockingbird", category: "classic", price: 320 },
+  { title: "Foundation", category: "sci-fi", price: 420 },
+];
+        function analyzeBookSales(bookArray) {
+            let sum = 0;
+            for(let obj of bookArray) {
+                sum += obj.price;
+            }
+            return sum;
+        }
+
+        
+//сколько денег выручено
+
+let result = analyzeBookSales(books)
+console.log(result)
+document.querySelector('.answer').innerHTML = `Выручка: ${result}`
+    </script>
+</body>
+</html>

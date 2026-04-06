@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Разбивка массива на подмассивы фиксированной длины
+    
+        
+        🏗️
+        
+        **Условие:** Напиши `chunkArray(arr, size)`, которая разобьёт массив на массив подмассивов длины `size` (последний может быть короче).
+        
+        
+        
+    </p>
+    <pre>
+        // Вход:
+        const arr = [1, 2, 3, 4, 5];
+        const size = 2;
+        
+        // Вызов:
+        const result = chunkArray(arr, size);
+        
+        // Ожидаемый результат:
+        const expected = [[1, 2], [3, 4], [5]];
+    </pre>
+    <div class="answer">результат в консоли</div>
+    <script>
+    // Вход:
+const arr = [1, 2, 3, 4, 5];
+const size = 2;
+
+function chunkArray(userArr, userSize){
+    let returnArr = [];
+    for(let i = 0; i <= userArr.length/2; i++) {
+        returnArr.push(userArr.slice(i*userSize, (i+1)*userSize))
+    }
+    return returnArr;
+}
+// Вызов:
+const result = chunkArray(arr, size);
+console.log('Ответ ',result)
+for(let j of result){
+    document.querySelector('.answer').innerHTML += `<br>${j}`
+}
+// Ожидаемый результат:
+// const expected = [[1, 2], [3, 4], [5]];
+    </script>
+</body>
+</html>
