@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+      - Проверка правила для дефицитных товаров
+    
+    <aside>
+    🏗️
+    
+    **Условие:** Напиши функцию `allLowStockAreExpensive(inventory, lowStockThreshold, minPrice)`, которая возвращает `true`, если **все** товары с `stock < lowStockThreshold` имеют `price > minPrice`.
+    
+    </aside>
+    </p>
+    <pre>
+      // Вход:
+      const inventory = [
+        { name: 'A', stock: 3,  price: 120 },
+        { name: 'B', stock: 10, price: 50 },
+        { name: 'C', stock: 2,  price: 90 }
+      ];
+      const lowStockThreshold = 5;
+      const minPrice = 100;
+      
+      // Вызов:
+      const result = allLowStockAreExpensive(inventory, lowStockThreshold, minPrice);
+      
+      // Ожидаемый результат:
+      const expected = false;
+    </pre>
+    <p class="answer"></p>
+    <script>
+   // Вход:
+const inventory = [
+  { name: 'A', stock: 3,  price: 120 },
+  { name: 'B', stock: 10, price: 50 },
+  { name: 'C', stock: 2,  price: 90 }
+];
+const lowStockThreshold = 5;
+const minPrice = 100;
+
+function allLowStockAreExpensive(inv, lST, mP){
+  let answer;
+  // console.log(inv.filter(i => i.stock < lST))
+  for(let j of inv.filter(i => i.stock < lST)) {
+    console.log(j)
+    if(j.price > mP) answer = true
+    else return false
+  }
+  return answer;
+}
+// Вызов:
+const result = allLowStockAreExpensive(inventory, lowStockThreshold, minPrice);
+console.log(result)
+// Ожидаемый результат:
+const expected = false;
+    </script>
+</body>
+</html>
