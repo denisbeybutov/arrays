@@ -24,9 +24,16 @@
     <script>
       // Вход:
 const arrays = [[1], [2, 3], [4, 5, 6], [], [7, 8]];
+function selectionOfArraysByLength(userArr){
+  let innerArr = [];
+  innerArr = userArr.filter(a => a.length >= 2)
+  return innerArr;
+}
 
+console.log(selectionOfArraysByLength(arrays))
 // Выход:
-const result = [[2, 3], [4, 5, 6], [7, 8]];
+//const result = [[2, 3], [4, 5, 6], [7, 8]];
+
     </script>
 </body>
 </html>

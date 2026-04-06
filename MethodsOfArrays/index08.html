@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Поиск книг по жанру
+    
+      <aside>
+      🏗️
+      
+      Реализуй функцию `getBooksByGenre(genre)` , которая принимает на ход жанр и возвращает список книг, содержащих нужный жанр
+      
+      </aside>
+    </p>
+    <pre>
+      const books = [
+    {
+        title: "Преступление и наказание",
+        author: "Федор Достоевский",
+        genres: ["Классика", "Психологический роман"],
+        isRead: true
+    },
+    {
+        title: "1984",
+        author: "Джордж Оруэлл",
+        genres: ["Антиутопия", "Научная фантастика"],
+        isRead: false
+    },
+    {
+        title: "Мастер и Маргарита",
+        author: "Михаил Булгаков",
+        genres: ["Классика", "Фэнтези"],
+        isRead: false
+    },
+    {
+        title: "Гарри Поттер и философский камень",
+        author: "Джоан Роулинг",
+        genres: ["Фэнтези", "Приключения"],
+        isRead: false
+    },
+    {
+        title: "Три товарища",
+        author: "Эрих Мария Ремарк",
+        genres: ["Классика", "Роман"],
+        isRead: false
+    }
+];
+    </pre>
+    <p class="answer"></p>
+    <script>
+     const books = [
+    {
+        title: "Преступление и наказание",
+        author: "Федор Достоевский",
+        genres: ["Классика", "Психологический роман"],
+        isRead: true
+    },
+    {
+        title: "1984",
+        author: "Джордж Оруэлл",
+        genres: ["Антиутопия", "Научная фантастика"],
+        isRead: false
+    },
+    {
+        title: "Мастер и Маргарита",
+        author: "Михаил Булгаков",
+        genres: ["Классика", "Фэнтези"],
+        isRead: false
+    },
+    {
+        title: "Гарри Поттер и философский камень",
+        author: "Джоан Роулинг",
+        genres: ["Фэнтези", "Приключения"],
+        isRead: false
+    },
+    {
+        title: "Три товарища",
+        author: "Эрих Мария Ремарк",
+        genres: ["Классика", "Роман"],
+        isRead: false
+    }
+];
+
+function getBooksByGenre(userBooks, genre) {
+  let returnArr = [];
+  userBooks.forEach(function(book){
+    for(let i of book.genres){
+      
+      if (i == genre) returnArr.push(book.title)
+    }
+  })
+  return returnArr;
+}
+
+console.log(getBooksByGenre(books,'Классика'))
+    </script>
+</body>
+</html>

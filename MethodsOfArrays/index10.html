@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Группировка и сумма по ключу
+    
+        <aside>
+        🏗️
+        
+        **Условие:** Напиши `groupSumBy(items, groupKey, valueKey)`, которая соберёт объект вида `{[group]: sum}`.
+        
+        </aside>
+    </p>
+    <pre>
+        // Вход:
+        const items = [
+          { dept: 'it', amount: 100 },
+          { dept: 'sales', amount: 40 },
+          { dept: 'it', amount: 60 },
+          { dept: 'hr', amount: 20 }
+        ];
+        const groupKey = 'dept';
+        const valueKey = 'amount';
+        
+        // Вызов:
+        const result = groupSumBy(items, groupKey, valueKey);
+        
+        // Ожидаемый результат:
+        const expected = { it: 160, sales: 40, hr: 20 };
+    </pre>
+    <p class="answer"></p>
+    <script>
+     // Вход:
+const items = [
+  { dept: 'it', amount: 100 },
+  { dept: 'sales', amount: 40 },
+  { dept: 'it', amount: 60 },
+  { dept: 'hr', amount: 20 }
+];
+const groupKey = 'dept';
+const valueKey = 'amount';
+
+function groupSumBy(userItems, userGroupKey, userValueKey){
+    const obj = userItems.reduce((acc, item) => {
+
+        if(acc[item[userGroupKey]]) {
+            acc[item[userGroupKey]] += item[userValueKey]
+        }
+        else {
+        acc[item[userGroupKey]] = item[userValueKey]
+        }
+     
+        return acc;
+    }, {})
+    
+    return obj;
+
+}
+// Вызов:
+const result = groupSumBy(items, groupKey, valueKey);
+console.log('ответ',result)
+
+// Ожидаемый результат:
+const expected = { it: 160, sales: 40, hr: 20 };
+    </script>
+</body>
+</html>

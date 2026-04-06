@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Имена взрослых в верхнем регистре
+    
+        <aside>
+        🏗️
+        
+        **Условие:** дан массив объектов `{ name, age }`. Нужно оставить только тех, кому 18 и больше, а затем вернуть массив имён в верхнем регистре.
+        
+        </aside>
+    </p>
+    <pre>
+        // Вход:
+        const people = [
+          { name: 'Анна', age: 17 },
+          { name: 'Иван', age: 22 },
+          { name: 'Оля', age: 30 }
+        ];
+        
+        // Выход:
+        const result = ['ИВАН', 'ОЛЯ'];
+    </pre>
+    <p class="answer"></p>
+    <script>
+     // Вход:
+const people = [
+  { name: 'Анна', age: 17 },
+  { name: 'Иван', age: 22 },
+  { name: 'Оля', age: 30 }
+];
+
+let res = [];
+for(let man of people) {
+    if(man.age >= 18) res.push(man.name.toUpperCase())
+}
+console.log(res)
+// Выход:
+const result = ['ИВАН', 'ОЛЯ'];
+    </script>
+</body>
+</html>
