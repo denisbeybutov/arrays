@@ -44,7 +44,11 @@ usersById = {
   {id: 'pete', name: "Pete Peterson", age: 31},
 ];
 function groupById(userArr){
-    
+    let innerObj = {};
+    for(let user of userArr){
+        innerObj[user.id] = user; 
+    }
+    return innerObj;
 }
 let usersById = groupById(users);
 console.log(usersById)

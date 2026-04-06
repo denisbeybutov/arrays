@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Топ-3 активных по цене
+    
+      <aside>
+      🏗️
+      
+      **Условие:** даны товары `{ title, price, active }`. Оставить `active`, отсортировать по `price` по убыванию, взять топ-3, вернуть заголовки.
+      
+      </aside>
+    </p>
+    <pre>
+      // Вход:
+      const products = [
+        { title: 'A', price: 90, active: true },
+        { title: 'B', price: 340, active: true },
+        { title: 'C', price: 210, active: false },
+        { title: 'D', price: 500, active: true },
+        { title: 'E', price: 120, active: true }
+      ];
+      
+      // Выход:
+      const result = ['D', 'B', 'E'];
+    </pre>
+    <p class="answer"></p>
+    <script>
+    // Вход:
+const products = [
+  { title: 'A', price: 90, active: true },
+  { title: 'B', price: 340, active: true },
+  { title: 'C', price: 210, active: false },
+  { title: 'D', price: 500, active: true },
+  { title: 'E', price: 120, active: true }
+];
+
+let activeArr = products.filter(product => product.active == true)
+console.log(activeArr)
+activeArr.sort((a,b) => b.price - a.price)
+console.log(activeArr)
+let res = [];
+for(let i = 0; i < 3; i++){
+  res.push(activeArr[i].title)
+}
+console.log(res)
+
+// Выход:
+const result = ['D', 'B', 'E'];
+    </script>
+</body>
+</html>

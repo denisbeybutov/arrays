@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>- Средняя оценка по “длинным” отзывам
+    
+      <aside>
+      🏗️
+      
+      **Условие:** отзывы `{ text, rating }`. Написать функцию, которая возьмет отзывы с минимальной длинной `N` (`text >= N` ) символов и посчитает средний `rating` (округлить до 2 знаков).
+      
+      </aside>
+    </p>
+    <pre>
+      // Вход:
+      const texts = [
+        { text: "Отличный продукт, все понравилось", rating: 5 },
+        { text: "Норм", rating: 3 },
+        { text: "Качество хорошее, но доставка долгая", rating: 4 },
+        { text: "Плохо", rating: 2 }
+      ]
+      const N = 10;
+      
+      // Выход:
+      const result = 4.50
+    </pre>
+    <p class="answer"></p>
+    <script>
+   // Вход:
+const texts = [
+  { text: "Отличный продукт, все понравилось", rating: 5 },
+  { text: "Норм", rating: 3 },
+  { text: "Качество хорошее, но доставка долгая", rating: 4 },
+  { text: "Плохо", rating: 2 }
+]
+
+const N = 10;
+let amountOfReply = 0;
+let res = texts.reduce((acc, textItem,index) =>{
+  
+  
+  if(textItem.text.length > N) {
+    acc.rating += textItem.rating
+    amountOfReply++;
+  }
+  
+  return acc;
+}, {rating: 0})
+
+console.log((res.rating/amountOfReply).toFixed(2))
+// Выход:
+const result = 4.50
+    </script>
+</body>
+</html>
